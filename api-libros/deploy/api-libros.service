@@ -1,0 +1,14 @@
+[Unit]
+Description=API de libros (Node.js + Express)
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+WorkingDirectory=/home/ec2-user/api-libros
+EnvironmentFile=/home/ec2-user/api-libros/.env
+ExecStart=/usr/bin/node server.js
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
